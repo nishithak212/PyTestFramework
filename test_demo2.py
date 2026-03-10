@@ -2,12 +2,9 @@
 
 #As per pytest framework standards, code should be written in functions only
 
-#Syntax of funtion in python. Everyline of code should be written in function only if using Pytest framework
+#Syntax of funtion in python. Everyline of code should be written in function only if using Pytest framework.
 
 #Any code should be wrapped in method only
-import pytest
-def test_firstProgram(): #Test case name is method name. Test method names should always start with test keyword
-    print("Hello Hi")
 
 #Commands to run pytest from terminal
 
@@ -17,10 +14,10 @@ def test_firstProgram(): #Test case name is method name. Test method names shoul
 #3. pytest -v -s == s is used to print all console logs
 
 #Command to run specific pytest file with filename
-#pytest test_demo1.py -v -s
+#pytest test_demo2.py -v -s
 
 #Command to run specific testcases in pytest
-#py.test -k CreditCard -v -s          == k stands for regular expression. Here pytest scans all method names with CreditCard and runs only them
+#py.test -k CreditCard -v -s  == k stands for regular expression. Here pytest scans all method names with CreditCard and runs only them
 
 #-k stands for method names execution
 #-s stands for logs in output
@@ -28,11 +25,22 @@ def test_firstProgram(): #Test case name is method name. Test method names shoul
 #-m stands for mark. We can mark tests with @pytest.mark.testtypename e.g. @pytest.mark.smoke
 #Skip a test case with @pytest.mark.skip. Can be defined right before the method
 
-@pytest.mark.xfail #Used when we want further test cases to run and do not want this test case to be reported in the result
-def test_secondProgram():
-    print("Good Morning")
+import pytest
 
 #Recognizing below test cases as smoke
 @pytest.mark.smoke
-def test_thirdGreetCreditCard():
-    print("Good Afternoon")
+@pytest.mark.skip #Skips the below testcase
+
+def test_firstProgram():
+    msg = "Hi"
+    assert msg == "Hello" , "Test failed because strings do not match"
+
+def test_secondProgram():
+    a=4
+    b=6
+    assert a+2 == 6, "Addition does not match"
+
+def test_thirdCreditCard():
+    a=4
+    b=6
+    assert a+2 == 8, "Addition does not match"
