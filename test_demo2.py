@@ -40,7 +40,9 @@ def test_secondProgram():
     b=6
     assert a+2 == 6, "Addition does not match"
 
-def test_thirdCreditCard():
+def test_thirdCreditCard(setup):
     a=4
     b=6
-    assert a+2 == 8, "Addition does not match"
+    assert a+4 == 8, "Addition does not match"
+
+

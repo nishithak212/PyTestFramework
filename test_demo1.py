@@ -32,7 +32,11 @@ def test_firstProgram(): #Test case name is method name. Test method names shoul
 def test_secondProgram():
     print("Good Morning")
 
+def test_crossBrowser(crossBrowser):
+    print(crossBrowser[1])
+
+
 #Recognizing below test cases as smoke
 @pytest.mark.smoke
-def test_thirdGreetCreditCard():
+def test_thirdGreetCreditCard(setup):
     print("Good Afternoon")
