@@ -14,7 +14,7 @@ def test_e2e(browserInstance):
 
     driver.find_element(By.ID,"username").send_keys("rahulshettyacademy")
     driver.find_element(By.ID,"password").send_keys("Learning@830$3mK2")
-    driver.find_element(By.ID,"terms").click()
+    #driver.find_element(By.ID,"terms").click()
     driver.find_element(By.ID,"signInBtn").click()
 
     #For the href value =>href="/angularpractice/shop" we can use below CSS or Xpath regular expressions instead
